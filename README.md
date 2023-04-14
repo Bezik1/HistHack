@@ -7,5 +7,5 @@ Type in console `pip install`
 ## :hammer_and_wrench: Commands
 To run application type `py main.py`
 
-## :succes: Project Status
+## :heavy_check_mark: Project Status
 Project finished!
