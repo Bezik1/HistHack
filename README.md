@@ -5,7 +5,9 @@ Game using only pygame, based on raycaster build by myself few months ago, based
 Type in console `pip install pygame`
 
 ## :hammer_and_wrench: Commands
-To run application type `py main.py`
+To run application:
+* type `py main.py`
+* or click into `main.exe`
 
 ## :heavy_check_mark: Project Status
 Project finished!
