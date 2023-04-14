@@ -2,7 +2,7 @@
 Game using only pygame, based on raycaster build by myself few months ago, based on algorithm on DOOM 1993
 
 ## :dart: Install Dependencies
-Type in console `pip install`
+Type in console `pip install pygame`
 
 ## :hammer_and_wrench: Commands
 To run application type `py main.py`
