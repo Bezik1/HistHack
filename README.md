@@ -11,5 +11,5 @@ To run application type `py main.py`
 Project finished!
 
 ## :movie_camera: Raycaster
-Raycaster is the way to project 2 dimensionals graphic into 3 dimensional space. \
+Raycaster is a way to project 2 dimensionals graphic into 3 dimensional space. \
 We based our algorithm on original type from "DOOM", game from 1993.
