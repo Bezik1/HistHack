@@ -52,7 +52,7 @@ aby dostarczyć ważną wiadomość do dowództwa.
 Pamiętaj, aby zachować szczególną ostrożność.
 Jako nasz człowiek masz również obowiązek pomagać cywilom,
 jak i każdemu z naszego oddziału.
-A posłucaj i najważniejsze
+A posłuchaj i najważniejsze
 Uważaj na granaty!!'''
 
 OLD_LADY_TEXT = '''Młodzieńcze, uszyłam bardzo wytrzymałą bluzkę.

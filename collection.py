@@ -43,8 +43,6 @@ class Collection():
                         self.pressed_index = j
                         self.items[self.pressed_index].expanded = True
 
-
-
     def run(self,items):
         self.x = True
         while self.x:

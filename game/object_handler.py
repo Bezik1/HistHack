@@ -1,5 +1,10 @@
-from game.object_loader import *
+from game.objects.AnimatedNPC import AnimatedNPC
+from game.objects.NPC import NPC
+from game.objects.Grenade import Grenade
+from game.objects.InteractiveObject import InteractiveObject
+from game.objects.Pickup import Pickup
 from game.quest_handler import Quest
+from game.constans import *
 
 class ObjectHandler:
     def __init__(self, game, pickups) -> None:
@@ -46,18 +51,18 @@ class ObjectHandler:
         self.add_object(NPC(self.game, f'{npc_path}sanitariuszka.png', (14.5, 4.5), 'Sanitariuszka', 
             SOCIAL_HELPER_TEXT, bring_blouse_quest_complete, 2))
 
-        self.add_object(NPC(self.game, f'{npc_path}powstaniec2.png', (1.5, 7.5), 'Powstaniec_2', 
+        self.add_object(NPC(self.game, f'{npc_path}powstaniec2.png', (1.5, 7.5), 'Powstaniec 2', 
                     FIND_HAT_TEXT, find_floor_1_quest))
         
-        self.add_object(NPC(self.game, f'{npc_path}powstaniec4.png', (30.5, 14.5), 'Powstaniec_3', 
+        self.add_object(NPC(self.game, f'{npc_path}powstaniec4.png', (30.5, 14.5), 'Powstaniec 3', 
                         REBEL2_TEXT, if_end_game, 2))
         
         #Animated NPCs
         self.add_object(AnimatedNPC(self.game, 'resources/objects/npc/animated/0.png', 
-                       (6.5, 2.5), 'Powstaniec_4', REBEL_TEXT, (2.75, 1.5 )))
+                       (6.5, 2.5), 'Powstaniec 4', REBEL_TEXT, (2.75, 1.5 )))
         
         #weapons
-        #self.add_weapon(Grenade(self.game, (15.5, 2.5), 1)) - powodował błąd, którego nie mieliśmy czasu naprawić
+        self.add_weapon(Grenade(self.game, (15.5, 2.5), 1)) # - powodował błąd, którego nie mieliśmy czasu naprawić
         
         #interactive_objects
         self.add_interactive_object(InteractiveObject(self.game, f'{static_object_path}ledder.png', 

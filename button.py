@@ -23,5 +23,5 @@ class Button():
                 collection = Collection(self.menu)
                 collection.run(self.items)
             case _:
-                print('Nie poprawny index')
+                print('Index out of range')
 
