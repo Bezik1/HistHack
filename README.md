@@ -1,6 +1,12 @@
 # HistHack :earth_africa:
 Game using only pygame, based on raycaster build by myself few months ago, based on algorithm on DOOM 1993
 
+ ## 👥 Members:
+ * [Bezik1](https://github.com/Bezik1)
+ * [Maxiron794](https://github.com/Maxiron794)
+ * [przemoooooo](https://github.com/przemoooooo)
+ * [majer69a](https://github.com/majer69a)
+
 ## :dart: Install Dependencies
 Type in console `pip install pygame`
 
