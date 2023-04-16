@@ -1,5 +1,5 @@
 # HistHack :earth_africa:
-Game using only pygame, based on raycaster build by myself few months ago, based on algorithm on DOOM 1993
+Game using only pygame, rendered by raycaster, based on algorithm on DOOM 1993
 
  ## 👥 Members:
  * [Bezik1](https://github.com/Bezik1)
