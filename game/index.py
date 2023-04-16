@@ -1,4 +1,4 @@
-import pygame as pg, sys
+import pygame as pg
 from game.constans import *
 from game.map import Map
 from game.player import Player

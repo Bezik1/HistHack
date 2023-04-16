@@ -16,9 +16,6 @@ class QuestHandler:
         return self.quests_names.index(name)
     
     def draw(self):
-        #surface = pg.Surface((420,600), pg.SRCALPHA)
-        #surface.fill((0, 0, 0, 168)) 
-        #self.screen.blit(surface, (WIDTH - surface.get_width(), HEIGHT // 2 - surface.get_height() // 2))
         self.screen.blit(self.image, (WIDTH - self.image.get_width(), HEIGHT // 2 - self.image.get_height() // 2 - 50))
         font = pg.font.Font(None, 40)
         text_surface = font.render('Zadania:', True, (0, 0, 0))
