@@ -30,7 +30,7 @@ class QuestHandler:
     def update(self):
         if self.game.expand_quests:
             self.draw()
-        [self.quests[key].update() for key in self.quests]
+            [quest.update() for key, quest in self.quests.items()]
         pickups_names = [pickup[2] for pickup in self.game.player.pickups]
         first_floor_basic_quests_condition = 'szukanie' in self.succesed_quests and 'bluzka' in self.succesed_quests
         
@@ -38,9 +38,9 @@ class QuestHandler:
             self.quests['szukanie'].status = True
             self.remove_quest('szukanie')
         
-        if first_floor_basic_quests_condition and self.game.quest_handler.quests.get('pomoc', False):
-            self.game.quest_handler.quests['pomoc'].status = True
-            self.game.quest_handler.remove_quest('pomoc')
+        if first_floor_basic_quests_condition and self.quests.get('pomoc', False):
+            self.game.quests['pomoc'].status = True
+            self.game.remove_quest('pomoc')
         
         if first_floor_basic_quests_condition and 'pomoc' in self.succesed_quests:
             self.game.win_condition = True
@@ -69,5 +69,5 @@ class Quest:
                             (HEIGHT // 3) + self.game.quest_handler.get_index_by_name(self.name)*30 + 30*i - 55))
     
     def update(self):
-        if not self.status and self.game.expand_quests:
-            self.draw()
+        #if not self.status and self.game.expand_quests:
+        self.draw()

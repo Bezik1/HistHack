@@ -33,8 +33,8 @@ class Game:
     
     def new_game(self):
         self.map = Map(self)
-        self.quest_handler = QuestHandler(self, self.quests)
         self.player = Player(self, self.pos, self.pickups)
+        self.quest_handler = QuestHandler(self, self.quests)
         self.text_handler = TextHandler(self)
         self.texture_loader = TextureLoader(self)
         self.raycasting = RayCasting(self)
@@ -73,6 +73,7 @@ class Game:
                 self.expand_quests = not self.expand_quests
             elif event.type == pg.KEYDOWN and event.key == pg.K_i:
                 self.interaction = True
+
     def game_over(self):
         self.map.current_index = 0
         self.progress_value = 0

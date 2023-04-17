@@ -3,7 +3,6 @@ from config import *
 from game.index import Game
 from collection import Collection
 
-
 class Button():
     def __init__(self, menu, index,y):
         self.menu = menu
