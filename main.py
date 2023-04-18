@@ -12,6 +12,7 @@ class Menu:
         self.pickups = []
         self.player_pos = PLAYER_POS
         self.game_over = False
+        self.floor_index = 0
         self.quests = [{}, []]
         self.progress_value = 0
         self.clock = pg.time.Clock()

@@ -72,10 +72,10 @@ tenement2_map = [
 ]
 
 class Map:
-    def __init__(self, game) -> None:
+    def __init__(self, game, floor_index) -> None:
         self.game = game
         self.maps = [tenement1_map, channels_map, tenement2_map]
-        self.current_index = 0
+        self.current_index = floor_index
         self.mini_map = self.maps[self.current_index]
         self.world_map = {}
         self.get_map()

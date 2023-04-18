@@ -16,8 +16,14 @@ class Button():
         match index:
             case 0:
                 if not self.menu.game_over:
-                    game = Game(self.menu.player_pos, self.menu.pickups, self.menu.progress_value, self.menu.quests)
-                    self.menu.player_pos, self.menu.pickups, self.menu.progress_value, self.menu.quests, self.menu.game_over = game.run()
+                    game = Game(
+                        pos=self.menu.player_pos, 
+                        pickups=self.menu.pickups, 
+                        progress=self.menu.progress_value, 
+                        quests=self.menu.quests,
+                        floor_index=self.menu.floor_index,
+                    )
+                    self.menu.player_pos, self.menu.pickups, self.menu.progress_value, self.menu.quests, self.menu.game_overm, self.menu.floor_index = game.run()
             case 1:
                 collection = Collection(self.menu)
                 collection.run(self.items)

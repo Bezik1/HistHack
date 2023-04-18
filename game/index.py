@@ -10,15 +10,16 @@ from game.sound import Sound
 from game.progress import Progress
 from game.quest_handler import QuestHandler
 
-class Game:
-    def __init__(self, pos=PLAYER_POS, pickups=[], progress=0, quests=[{}, []]) -> None:
+class Game: #pos=PLAYER_POS, pickups=[], progress=0, quests=[{}, []]
+    def __init__(self, **kwargs) -> None:
         pg.init()
         pg.mouse.set_visible(False)
         self.screen = pg.display.set_mode(RES)
-        self.pos = pos
-        self.progress_value = progress
-        self.pickups = pickups
-        self.quests = quests
+        self.pos = kwargs['pos']
+        self.progress_value = kwargs['progress']
+        self.pickups = kwargs['pickups']
+        self.floor_index = kwargs['floor_index']
+        self.quests = kwargs['quests']
         self.clock = pg.time.Clock()
         self.delta_time = 1
         self.global_trigger = False
@@ -32,7 +33,7 @@ class Game:
         self.new_game()
     
     def new_game(self):
-        self.map = Map(self)
+        self.map = Map(self, self.floor_index)
         self.player = Player(self, self.pos, self.pickups)
         self.quest_handler = QuestHandler(self, self.quests)
         self.text_handler = TextHandler(self)
@@ -92,5 +93,6 @@ class Game:
             self.player.pickups, 
             self.progress.get_progress(), 
             (self.quest_handler.quests, self.quest_handler.quests_names),
-            self.win_condition
+            self.win_condition,
+            self.map.current_index,
         ]

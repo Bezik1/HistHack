@@ -43,49 +43,49 @@ class ObjectHandler:
         
         #NPCs
         self.add_object(NPC(self.game, f'{npc_path}powstaniec4.png', (6.5, 1.5), 'Powstaniec', 
-                            SOLDIER_TEXT, help_quest))
+            SOLDIER_TEXT, help_quest))
 
         self.add_object(NPC(self.game, f'{npc_path}staruszka.png', (1.5, 14.5), 'Staruszka', 
-                    OLD_LADY_TEXT, bring_blouse_quest))
+            OLD_LADY_TEXT, bring_blouse_quest))
 
         self.add_object(NPC(self.game, f'{npc_path}sanitariuszka.png', (14.5, 4.5), 'Sanitariuszka', 
             SOCIAL_HELPER_TEXT, bring_blouse_quest_complete, 2))
 
         self.add_object(NPC(self.game, f'{npc_path}powstaniec2.png', (1.5, 7.5), 'Powstaniec 2', 
-                    FIND_HAT_TEXT, find_floor_1_quest))
+            FIND_HAT_TEXT, find_floor_1_quest))
         
         self.add_object(NPC(self.game, f'{npc_path}powstaniec4.png', (30.5, 14.5), 'Powstaniec 3', 
-                        REBEL2_TEXT, if_end_game, 2))
+            REBEL2_TEXT, if_end_game, 2))
         
         #Animated NPCs
         self.add_object(AnimatedNPC(self.game, 'resources/objects/npc/animated/0.png', 
-                       (6.5, 2.5), 'Powstaniec 4', REBEL_TEXT, (2.75, 1.5 )))
+            (6.5, 2.5), 'Powstaniec 4', REBEL_TEXT, (2.75, 1.5 )))
         
         #weapons
         self.add_weapon(Grenade(self.game, (15.5, 2.5), 1)) # - powodował błąd, którego nie mieliśmy czasu naprawić
         
         #interactive_objects
         self.add_interactive_object(InteractiveObject(self.game, f'{static_object_path}ledder.png', 
-                                                      (8.5, 1.5), self.game.map.go_next, 0, 1.2))
+            (8.5, 1.5), self.game.map.go_next, 0, 1.2))
 
         self.add_interactive_object(InteractiveObject(self.game, f'{static_object_path}ledder.png', 
-                                                (8.5, 1.5), self.game.map.go_next, 1, 1.2, 0.2))
+            (8.5, 1.5), self.game.map.go_next, 1, 1.2, 0.2))
 
         self.add_interactive_object(InteractiveObject(self.game, f'{static_object_path}ledder.png', 
-                                        PLAYER_POS, self.game.map.go_back, 2, 1.2, 0.2))
+            PLAYER_POS, self.game.map.go_back, 2, 1.2, 0.2))
 
         self.add_interactive_object(InteractiveObject(self.game, f'{static_object_path}ledder.png', 
-                                        PLAYER_POS, self.game.map.go_back, 1, 1.2, 0.2))
+            PLAYER_POS, self.game.map.go_back, 1, 1.2, 0.2))
 
         #pickups
         self.add_pickup(Pickup(self.game, f'{pickup_path}granat_karbidowy.png', (11.5, 1.5), 'granat_karbidowy', 0, 0.29 , 1.5), 'granat_karbidowy')
         self.add_pickup(Pickup(self.game, f'{pickup_path}malpka.png', (14.5, 14.5), 'malpka', 0, 0.25, 1.5), 'malpka')
-        self.add_pickup(Pickup(self.game, f'{pickup_path}futeral.png', (1.5, 18.5), 'futeral', 1), 'futeral')
+        self.add_pickup(Pickup(self.game, f'{pickup_path}futeral.png', (19.5, 1.5), 'futeral', 2), 'futeral')
         self.add_pickup(Pickup(self.game, f'{pickup_path}aparat.png', (20.5, 11.5), 'aparat', 0, 0.25, 1.5), 'aparat')
         self.add_pickup(Pickup(self.game, f'{pickup_path}bluzka.png', (20.5, 17.5), 'bluzka', 0, 0.25, 1.5), 'bluzka')
         self.add_pickup(Pickup(self.game, f'{pickup_path}helm.png', (28.5, 2.5), 'helm', 1, 0.25, 1.5), 'helm')
         self.add_pickup(Pickup(self.game, f'{pickup_path}opaska.png', (28.5, 1.5), 'opaska', 1, 0.25, 1.5), 'opaska')
-        self.add_pickup(Pickup(self.game, f'{pickup_path}zegarek.png', (4.5, 1.5), 'zegarek', 1, 0.25, 1.5), 'zegarek')
+        self.add_pickup(Pickup(self.game, f'{pickup_path}zegarek.png', (5.5, 2.5), 'zegarek', 2, 0.25, 1.5), 'zegarek')
         
     def update(self):
         [interactive_object.update() for interactive_object in self.interactive_object_list]
