@@ -81,3 +81,13 @@ CEILING_COLOR = (200, 200, 200)
 
 #NPC
 NPC_BASE_TEXT = "Czary mary \n Hokus pokus \n Abra kadabra"
+
+#base game result
+BASE_GAME_RESULT = {
+    'pos': PLAYER_POS,
+    'pickups': [], 
+    'progress': 0, 
+    'quests': [{}, []],
+    'win_condition': False,
+    'floor_index': 0,
+}

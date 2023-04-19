@@ -9,12 +9,7 @@ class Menu:
         bg_music.set_volume(1)
         bg_music.play(loops = -1)
         
-        self.pickups = []
-        self.player_pos = PLAYER_POS
-        self.game_over = False
-        self.floor_index = 0
-        self.quests = [{}, []]
-        self.progress_value = 0
+        self.game_result = BASE_GAME_RESULT
         self.clock = pg.time.Clock()
         self.menu = True
         self.FPS = 60

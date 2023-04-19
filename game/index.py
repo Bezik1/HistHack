@@ -11,15 +11,15 @@ from game.progress import Progress
 from game.quest_handler import QuestHandler
 
 class Game: #pos=PLAYER_POS, pickups=[], progress=0, quests=[{}, []]
-    def __init__(self, **kwargs) -> None:
+    def __init__(self, config) -> None:
         pg.init()
         pg.mouse.set_visible(False)
         self.screen = pg.display.set_mode(RES)
-        self.pos = kwargs['pos']
-        self.progress_value = kwargs['progress']
-        self.pickups = kwargs['pickups']
-        self.floor_index = kwargs['floor_index']
-        self.quests = kwargs['quests']
+        self.pos = config['pos']
+        self.progress_value = config['progress']
+        self.pickups = config['pickups']
+        self.floor_index = config['floor_index']
+        self.quests = config['quests']
         self.clock = pg.time.Clock()
         self.delta_time = 1
         self.global_trigger = False
@@ -80,6 +80,16 @@ class Game: #pos=PLAYER_POS, pickups=[], progress=0, quests=[{}, []]
         self.progress_value = 0
         self.x = False
     
+    def get_game_result(self):
+        return {
+            'pos': (self.player.x, self.player.y), 
+            'pickups': self.player.pickups, 
+            'progress': self.progress.get_progress(), 
+            'quests': (self.quest_handler.quests, self.quest_handler.quests_names),
+            'win_condition': self.win_condition,
+            'floor_index': self.map.current_index,
+        }
+
     def run(self):
         self.x = True
         while self.x:
@@ -88,11 +98,4 @@ class Game: #pos=PLAYER_POS, pickups=[], progress=0, quests=[{}, []]
             self.check_events()
             self.update()
             self.draw()
-        return [
-            (self.player.x, self.player.y), 
-            self.player.pickups, 
-            self.progress.get_progress(), 
-            (self.quest_handler.quests, self.quest_handler.quests_names),
-            self.win_condition,
-            self.map.current_index,
-        ]
+        return self.get_game_result()
