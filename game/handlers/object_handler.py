@@ -64,12 +64,12 @@ class ObjectHandler:
         #weapons
         self.add_weapon(Grenade(self.game, (15.5, 2.5), 1)) # - powodował błąd, którego nie mieliśmy czasu naprawić
         
-        #interactive_objects
+        #interactive objects
         self.add_interactive_object(InteractiveObject(self.game, f'{static_object_path}ledder.png', 
             (8.5, 1.5), self.game.map.go_next, 0, 1.2))
 
         self.add_interactive_object(InteractiveObject(self.game, f'{static_object_path}ledder.png', 
-            (8.5, 1.5), self.game.map.go_next, 1, 1.2, 0.2))
+            (8.5, 1.5), self.game.map.go_next, 1, 1.2, 0.02))
 
         self.add_interactive_object(InteractiveObject(self.game, f'{static_object_path}ledder.png', 
             PLAYER_POS, self.game.map.go_back, 2, 1.2, 0.2))

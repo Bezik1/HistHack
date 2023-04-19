@@ -24,7 +24,7 @@ class Collection():
         screen.blit(self.bg_surf,self.bg_rect)
         screen.blit(self.bg_info_surf, self.bg_info_rect)
         screen.blit(self.blanket_surf, self.blanket_rect)
-        for pickup_taken in self.menu.pickups:
+        for pickup_taken in self.menu.game_result['pickups']:
             for i in range(8):
                 if self.items[i].name == pickup_taken[2]:
                     self.items[i].visible = True

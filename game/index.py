@@ -14,20 +14,20 @@ class Game:
     def __init__(self, config) -> None:
         pg.init()
         pg.mouse.set_visible(False)
+
         self.screen = pg.display.set_mode(RES)
+        self.clock = pg.time.Clock()
+        
         self.pos = config['pos']
         self.progress_value = config['progress']
         self.pickups = config['pickups']
         self.floor_index = config['floor_index']
         self.quests = config['quests']
-        self.clock = pg.time.Clock()
+        
         self.delta_time = 1
-        self.global_trigger = False
         self.interaction = False
         self.first_final_event = False
         self.expand_quests = False
-        self.global_event = pg.USEREVENT + 0
-        pg.time.set_timer(self.global_event, 40)
         self.win_condition = False
         
         self.new_game()
@@ -51,6 +51,7 @@ class Game:
         self.text_handler.update()
         self.progress.update()
         self.map.update()
+        
         pg.display.flip()
         
         if 'kamienica' not in self.quest_handler.quests:
@@ -64,12 +65,9 @@ class Game:
         self.texture_loader.draw()
     
     def check_events(self):
-        self.global_trigger = False
         for event in pg.event.get():
             if event.type == pg.QUIT or (event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE):
                 self.x =  False
-            elif event.type == self.global_event:
-                self.global_trigger = True
             elif event.type == pg.KEYDOWN and event.key == pg.K_q:
                 self.expand_quests = not self.expand_quests
             elif event.type == pg.KEYDOWN and event.key == pg.K_i:
