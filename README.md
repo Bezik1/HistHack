@@ -15,8 +15,8 @@ To run application:
 * type `py main.py`
 * or click into `main.exe`
 
-## :heavy_check_mark: Project Status
-Project finished!
+## :warning: Project Status
+Project still in state of development.
 
 ## :movie_camera: Raycaster
 Raycaster is a way to project 2 dimensionals graphic into 3 dimensional space. \

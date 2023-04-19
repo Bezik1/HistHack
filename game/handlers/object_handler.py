@@ -3,7 +3,7 @@ from game.objects.NPC import NPC
 from game.objects.Grenade import Grenade
 from game.objects.InteractiveObject import InteractiveObject
 from game.objects.Pickup import Pickup
-from game.quest_handler import Quest
+from game.handlers.quest_handler import Quest
 from game.constans import *
 
 class ObjectHandler:

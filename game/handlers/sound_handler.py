@@ -1,6 +1,6 @@
 import pygame as pg
 
-class Sound:
+class SoundHandler:
     def __init__(self, game):
         self.game = game
         pg.mixer.init()

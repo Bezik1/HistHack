@@ -3,14 +3,14 @@ from game.constans import *
 from game.map import Map
 from game.player import Player
 from game.texture_loader import TextureLoader
-from game.object_handler import ObjectHandler
+from game.handlers.object_handler import ObjectHandler
 from game.raycasting import RayCasting
-from game.text_handler import TextHandler
-from game.sound import Sound
+from game.handlers.text_handler import TextHandler
+from game.handlers.sound_handler import SoundHandler
 from game.progress import Progress
-from game.quest_handler import QuestHandler
+from game.handlers.quest_handler import QuestHandler
 
-class Game: #pos=PLAYER_POS, pickups=[], progress=0, quests=[{}, []]
+class Game:
     def __init__(self, config) -> None:
         pg.init()
         pg.mouse.set_visible(False)
@@ -40,7 +40,7 @@ class Game: #pos=PLAYER_POS, pickups=[], progress=0, quests=[{}, []]
         self.texture_loader = TextureLoader(self)
         self.raycasting = RayCasting(self)
         self.object_handler = ObjectHandler(self, self.pickups)
-        self.sound = Sound(self)
+        self.sound = SoundHandler(self)
         self.progress = Progress(self.player, self.progress_value)
     
     def update(self):
