@@ -11,10 +11,10 @@ Game using only pygame, rendered by raycaster, based on algorithm on DOOM 1993
 Type in console `pip install pygame, pyinstaller`
 
 ## :hammer_and_wrench: Commands
+To build aplication type `pyinstaller main.py --onefile --noconsole` \
 To run application:
 * type `py main.py`
 * or click into `./dist/main.exe`
-To build aplication type `pyinstaller main.py --onefile --noconsole`
 
 ## :warning: Project Status
 Project still in state of development.
