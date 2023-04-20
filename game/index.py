@@ -77,6 +77,8 @@ class Game:
         self.map.current_index = 0
         self.progress_value = 0
         self.x = False
+        self.player.set_pos(PLAYER_POS)
+        self.floor_index = 0
     
     def get_game_result(self):
         return {
